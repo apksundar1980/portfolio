@@ -1,54 +1,46 @@
-# Deploy Portfolio to GitHub Pages (Online URL)
+# Deploy Portfolio to GitHub Pages (Fix Blank Page)
 
-Your site will be live at: **https://apksundar1980.github.io/portfolio/**
+**Your site:** https://apksundar1980.github.io/portfolio/
+
+The blank page was caused by wrong asset paths (`/assets/` instead of `./assets/`). Fixed with `base: './'`.
 
 ---
 
-## Option 1: Deploy with gh-pages (Easiest)
+## Quick Deploy (Recommended)
 
 ```bash
 cd /var/www/html/sundar.github.io
-npm run deploy
+sudo chown -R $USER:$USER .   # Fix permissions if needed
+bash deploy-manual.sh
 ```
 
-This will:
-1. Build the project
-2. Push the `dist/` folder to the `gh-pages` branch
-3. GitHub Pages will serve it automatically
-
-**First time:** You may be prompted to log in to GitHub. Ensure you have:
-- GitHub CLI (`gh auth login`) or
-- Git credentials configured
-
 ---
 
-## Option 2: Enable GitHub Pages in Settings
+## Manual Steps
 
-1. Go to https://github.com/apksundar1980/portfolio
-2. Click **Settings** → **Pages**
-3. Under **Source**, select **Deploy from a branch**
-4. Branch: **gh-pages** (or **main** if you deploy the root)
-5. Folder: **/ (root)**
-6. Click **Save**
+### 1. Fix permissions
 
----
+```bash
+sudo chown -R $USER:$USER /var/www/html/sundar.github.io
+```
 
-## Option 3: Manual Deploy (Push dist folder)
+### 2. Build and deploy
 
 ```bash
 cd /var/www/html/sundar.github.io
 npm run build
-git checkout -b gh-pages
-git add -f dist
-git mv dist/* .
-git commit -m "Deploy portfolio"
-git push origin gh-pages
+bash deploy-manual.sh
 ```
+
+### 3. Enable GitHub Pages (if not already)
+
+1. https://github.com/apksundar1980/portfolio/settings/pages
+2. Source: **Deploy from a branch**
+3. Branch: **gh-pages** → **/ (root)**
+4. Save
 
 ---
 
-## After Deployment
+## Verify
 
-- **URL:** https://apksundar1980.github.io/portfolio/
-- Changes may take 1–2 minutes to appear
-- Check status: **Settings → Pages** on your repo
+Visit https://apksundar1980.github.io/portfolio/ — portfolio should load with light yellow theme.
