@@ -1,0 +1,16 @@
+.about-card {
+  background: #FFFFFF;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.about-card p {
+  color: #424242;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
