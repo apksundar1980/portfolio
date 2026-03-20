@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="hero">
       <div className="hero-content">
         <p className="hero-greeting">Hello, I am</p>
-        <h1 className="hero-name">Sundar</h1>
+        <h1 className="hero-name">Sundaramahalingam Palanisamy</h1>
         <h2 className="hero-title">Full Stack Developer</h2>
         <p className="hero-desc">
           I build modern, responsive web applications with clean code and great user experiences.

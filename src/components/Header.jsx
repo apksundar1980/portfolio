@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <a href="#home" className="logo">Sundar</a>
+      <a href="#home" className="logo">Sundaramahalingam</a>
       <button 
         className="menu-toggle" 
         onClick={() => setMenuOpen(!menuOpen)}

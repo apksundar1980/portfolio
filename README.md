@@ -1,4 +1,4 @@
-# Sundar's Portfolio
+# Sundaramahalingam Palanisamy's Portfolio
 
 A React portfolio with light yellow background and white theme, hosted on GitHub Pages.
 
