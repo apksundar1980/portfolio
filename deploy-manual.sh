@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deploy portfolio to GitHub Pages - fixes blank page
+# Deploy portfolio to GitHub Pages
 # Run: cd /var/www/html/sundar.github.io && bash deploy-manual.sh
 
 set -e
@@ -14,7 +14,8 @@ cp -r dist-build/* "$TMP/"
 cp dist-build/.gitignore "$TMP/" 2>/dev/null || true
 
 CURRENT_BRANCH=$(git branch --show-current)
-git checkout gh-pages 2>/dev/null || git checkout -b gh-pages
+# -B creates branch if missing, or resets & checks out if it exists
+git checkout -B gh-pages
 
 # Replace all with dist-build contents
 find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
@@ -23,8 +24,8 @@ rm -rf "$TMP"
 
 git add .
 git status
-git commit -m "Deploy portfolio (fixed asset paths)" || echo "Nothing to commit"
-git push origin gh-pages
+git commit -m "Deploy portfolio" || echo "Nothing to commit"
+git push --force origin gh-pages
 
 git checkout "$CURRENT_BRANCH"
 echo "Done! Visit https://apksundar1980.github.io/portfolio/"
