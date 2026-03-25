@@ -7,6 +7,7 @@ import Contact from './Contact'
 
 const NAV_TABS = [
   { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
   { id: 'blog', label: 'Blog' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
@@ -123,6 +124,11 @@ export default function Hero({ activeTab, onTabChange }) {
               <Projects />
             </div>
           )}
+          {activeTab === 'skills' && (
+            <div className="hero-tab-panel" role="tabpanel" id="panel-skills" aria-labelledby="tab-skills">
+              <Skills />
+            </div>
+          )}
           {activeTab === 'blog' && (
             <div className="hero-tab-panel" role="tabpanel" id="panel-blog" aria-labelledby="tab-blog">
               <BlogPanel />
@@ -131,7 +137,6 @@ export default function Hero({ activeTab, onTabChange }) {
           {activeTab === 'about' && (
             <div className="hero-tab-panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
               <About />
-              <Skills />
             </div>
           )}
           {activeTab === 'contact' && (

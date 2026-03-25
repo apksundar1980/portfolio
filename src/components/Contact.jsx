@@ -11,7 +11,7 @@ export default function Contact() {
         </p>
         <div className="contact-links">
           <a href="mailto:your@email.com" className="contact-btn">Email Me</a>
-          <a href="https://github.com/sundar" target="_blank" rel="noopener noreferrer" className="contact-btn">GitHub</a>
+          <a href="https://github.com/apksundar1980" target="_blank" rel="noopener noreferrer" className="contact-btn">GitHub</a>
           <a href="https://linkedin.com/in/sundar" target="_blank" rel="noopener noreferrer" className="contact-btn">LinkedIn</a>
         </div>
       </div>
