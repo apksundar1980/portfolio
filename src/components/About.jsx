@@ -6,14 +6,26 @@ export default function About() {
       <h2 className="section-title">About Me</h2>
       <div className="about-card">
         <p>
-          I'm a passionate developer who loves creating elegant solutions to complex problems. 
-          With experience in full-stack development, I focus on building scalable, 
-          maintainable applications that users love.
+          I am an IT professional with over 13 years of experience in the software industry,
+          delivering reliable and scalable solutions.
         </p>
         <p>
-          When I'm not coding, you'll find me exploring new technologies, 
-          contributing to open source, or sharing knowledge with the developer community.
+          With solid expertise in Laravel, PHP, and React, I focus on building high-quality
+          applications with clean architecture and long-term sustainability.
         </p>
+        <p>
+          I believe consistency, ownership, and a problem-solving mindset are the foundations of
+          successful delivery. I approach every challenge with clarity, adapt to evolving
+          technologies, and ensure results that create real value.
+        </p>
+        <p>
+          Over the years, I have learned that true growth comes not just from experience, but from
+          the ability to continuously evolve.
+        </p>
+        <p>
+          For me, software development is not just a profession — it is a commitment to excellence.
+        </p>
+        <p>Let&apos;s create solutions that make a difference.</p>
       </div>
     </section>
   )

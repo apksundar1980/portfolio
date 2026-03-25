@@ -160,9 +160,6 @@ export default function Hero({ activeTab, onTabChange }) {
             onClick={() => onTabChange('home')}
             aria-label="Go to home"
           >
-            <svg className="squiggly" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden>
-              <path d="M0 5 Q25 0 50 5 T100 5" fill="none" stroke="#e07c4c" strokeWidth="2" />
-            </svg>
             <span className="hero-logo">Sundar</span>
           </button>
           <div className="hero-photo">

@@ -9,8 +9,8 @@
   --bg-secondary: #FFF9C4;
   --text-primary: #1a1a1a;
   --text-secondary: #424242;
-  --accent-white: #FFFFFF;
-  --card-bg: rgba(255, 255, 255, 0.9);
+  --accent-white: #faf7f2;
+  --card-bg: transparent;
   --shadow: rgba(0, 0, 0, 0.08);
 }
 
