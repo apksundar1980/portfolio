@@ -1,20 +1,37 @@
+.projects {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(16.5rem, 100%), 1fr));
   gap: 1.5rem;
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
 }
 
 .project-card {
-  background: #FFFFFF;
+  position: relative;
+  z-index: 0;
+  background: transparent;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid rgba(66, 66, 66, 0.18);
+  box-shadow: none;
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+  transform-origin: center center;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: scale(1.03);
+  border-color: #e07c4c;
+  box-shadow: 0 12px 36px rgba(224, 124, 76, 0.18);
+  z-index: 1;
 }
 
 .project-card h3 {
