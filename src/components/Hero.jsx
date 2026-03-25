@@ -170,6 +170,7 @@ export default function Hero({ activeTab, onTabChange }) {
               width={720}
               height={720}
             />
+            <p className="hero-profile-role">Senior Web Developer (Laravel, React)</p>
           </div>
         </div>
       </div>

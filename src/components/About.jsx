@@ -6,7 +6,7 @@ export default function About() {
       <h2 className="section-title">About Me</h2>
       <div className="about-card">
         <p>
-          I am an IT professional with over 13 years of experience in the software industry,
+          I am a Software Professional with over 13 years of experience in the software industry,
           delivering reliable and scalable solutions.
         </p>
         <p>
