@@ -4,7 +4,18 @@
   flex-direction: column;
 }
 
-/* Hero fills space above footer; inner column scrolls */
+@media (min-width: 901px) {
+  .app {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+/* Hero fills space above footer */
 .app > section.hero-split {
   flex: 1;
   min-height: 0;

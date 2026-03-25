@@ -1,13 +1,11 @@
 import './Hero.css'
 import profilePhoto from '../assets/sundar.jpg'
 import About from './About'
-import Skills from './Skills'
 import Projects from './Projects'
 import Contact from './Contact'
 
 const NAV_TABS = [
   { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
   { id: 'blog', label: 'Blog' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
@@ -139,11 +137,6 @@ export default function Hero({ activeTab, onTabChange }) {
               aria-labelledby="tab-projects"
             >
               <Projects />
-            </div>
-          )}
-          {activeTab === 'skills' && (
-            <div className="hero-tab-panel" role="tabpanel" id="panel-skills" aria-labelledby="tab-skills">
-              <Skills />
             </div>
           )}
           {activeTab === 'blog' && (

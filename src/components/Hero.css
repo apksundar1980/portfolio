@@ -89,6 +89,13 @@
   -webkit-overflow-scrolling: touch;
 }
 
+@media (min-width: 901px) {
+  .hero-body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+}
+
 .hero-body--home {
   justify-content: center;
   padding-bottom: 2rem;
@@ -99,18 +106,73 @@
   padding-inline: 1rem;
 }
 
+@media (min-width: 901px) {
+  .hero-left {
+    padding: 1.15rem 2.25rem 0.75rem;
+  }
+
+  .hero-nav {
+    top: 1.15rem;
+    left: 2.25rem;
+    right: 2.25rem;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .hero-body.hero-body--tabs {
+    padding-top: 2.35rem;
+    padding-inline: 0.85rem;
+  }
+}
+
 .hero-tab-panel {
   flex: 1;
   min-width: 0;
   padding-bottom: 1.5rem;
+  font-size: var(--font-tab-body);
+  line-height: var(--font-tab-line);
+  color: var(--text-secondary);
 }
 
 .hero-tab-panel section {
   padding: 0.75rem 0 1.25rem;
 }
 
-.hero-tab-panel .section-title {
-  margin-bottom: 1rem;
+@media (min-width: 901px) {
+  .hero-tab-panel {
+    padding-bottom: 0.25rem;
+    min-height: 0;
+  }
+
+  .hero-tab-panel section {
+    padding: 0.2rem 0 0.35rem;
+  }
+
+  .hero-tab-panel .section-title {
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-profile-stack {
+    padding-top: 1rem;
+    gap: 0.4rem;
+  }
+
+  .hero-right {
+    padding: 1.15rem 1.5rem 0.5rem;
+  }
+
+  .hero-photo {
+    max-width: clamp(180px, 26vw, 260px);
+  }
+
+  .hero-profile-img {
+    width: clamp(180px, 26vw, 260px);
+    height: clamp(180px, 26vw, 260px);
+  }
+
+  .hero-profile-role {
+    max-width: clamp(180px, 26vw, 260px);
+    font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  }
 }
 
 .tab-section {
@@ -123,9 +185,9 @@
   border-radius: 16px;
   border: 2px solid rgba(66, 66, 66, 0.18);
   box-shadow: none;
-  color: #424242;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
   transition:
     transform 0.28s ease,
     border-color 0.28s ease,
@@ -203,8 +265,8 @@
 
 .hero-desc {
   color: #424242;
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: var(--font-tab-body);
+  line-height: var(--font-tab-line);
   max-width: 36rem;
   margin-bottom: 0.85rem;
   text-align: center;

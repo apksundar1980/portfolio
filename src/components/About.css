@@ -1,7 +1,4 @@
-.about .section-title,
-.hero-tab-panel .about .section-title {
-  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
-  margin-bottom: 0.85rem;
+.about .section-title {
   margin-top: 0;
 }
 
@@ -28,9 +25,9 @@
 }
 
 .about-card p {
-  color: #424242;
+  color: inherit;
   margin-bottom: 1rem;
-  font-size: 1.05rem;
+  font-size: inherit;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -39,4 +36,13 @@
 
 .about-card p:last-child {
   margin-bottom: 0;
+}
+
+/* Desktop: keep normal type size (tiny 0.82rem was only for a no-scroll experiment). */
+@media (min-width: 901px) {
+  .hero-tab-panel .about-card:hover {
+    transform: none;
+    border-color: #e07c4c;
+    box-shadow: 0 6px 20px rgba(224, 124, 76, 0.12);
+  }
 }

@@ -4,14 +4,37 @@
   box-sizing: border-box;
 }
 
+/* Desktop: single-screen shell — no page scrollbars (see App.css + Hero.css) */
+@media (min-width: 901px) {
+  html {
+    height: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+
+  body {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+}
+
 :root {
   --bg-primary: #f7f3ee;
-  --bg-secondary: #FFF9C4;
+  --bg-secondary: #fff9c4;
   --text-primary: #1a1a1a;
   --text-secondary: #424242;
   --accent-white: #faf7f2;
   --card-bg: transparent;
   --shadow: rgba(0, 0, 0, 0.08);
+
+  /* Tab panels: one scale everywhere (~17px body, clear h2) */
+  --font-tab-h2: clamp(1.5rem, 2.65vw, 1.875rem);
+  --font-tab-body: 1.0625rem;
+  --font-tab-line: 1.65;
+  --font-tab-card-heading: 1.125rem;
+  --font-tab-meta: 0.9375rem;
 }
 
 body {
@@ -20,12 +43,14 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: var(--font-tab-h2);
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 1.5rem;
+  line-height: 1.28;
+  margin-bottom: 1rem;
 }

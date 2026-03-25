@@ -22,9 +22,9 @@
 }
 
 .contact-card p {
-  color: #424242;
+  color: inherit;
   margin-bottom: 1.5rem;
-  font-size: 1.05rem;
+  font-size: inherit;
 }
 
 .contact-links {
@@ -41,6 +41,7 @@
   color: #ffffff !important;
   text-decoration: none;
   border-radius: 8px;
+  font-size: var(--font-tab-body);
   font-weight: 600;
   transition: all 0.2s;
 }

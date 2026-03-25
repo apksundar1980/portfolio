@@ -35,20 +35,21 @@
 }
 
 .project-card h3 {
-  font-size: 1.25rem;
+  font-size: var(--font-tab-card-heading);
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1a1a1a;
 }
 
 .project-card p {
-  color: #424242;
-  font-size: 0.95rem;
+  color: inherit;
+  font-size: inherit;
   margin-bottom: 1rem;
 }
 
 .project-tech {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: var(--font-tab-meta);
   color: #666;
   margin-bottom: 1rem;
 }
