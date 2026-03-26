@@ -7,3 +7,6 @@
  */
 export const GITHUB_URL = 'https://github.com/apksundar1980'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/p-sundaramahalingam-k-palanisamy-2817659a/'
+
+/** Address used in Contact “Email” reveal + mailto link — set to your real inbox. */
+export const EMAIL = 'sundar.mahalingam@gmail.com'
