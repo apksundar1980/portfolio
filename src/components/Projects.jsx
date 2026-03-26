@@ -153,6 +153,24 @@ export default function Projects() {
                 <p key={`${activeProject.id}-${i}`}>{para.trim()}</p>
               ))}
             </div>
+            {Array.isArray(activeProject.implementation) &&
+              activeProject.implementation.length > 0 && (
+                <div className="project-modal__implementation">
+                  <h4 className="project-modal__implementation-title">
+                    Implemented with
+                  </h4>
+                  <table className="project-modal__table">
+                    <tbody>
+                      {activeProject.implementation.map((row) => (
+                        <tr key={row.label}>
+                          <th scope="row">{row.label}</th>
+                          <td>{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             <p className="project-modal__tech">{activeProject.tech}</p>
             <a
               href={activeProject.projectUrl}

@@ -276,6 +276,57 @@
   margin-bottom: 0;
 }
 
+.project-modal__implementation {
+  margin-top: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-modal__implementation-title {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #555;
+  margin: 0 0 0.6rem;
+}
+
+.project-modal__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-tab-body);
+  line-height: 1.45;
+  border: 1px solid rgba(66, 66, 66, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.project-modal__table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+}
+
+.project-modal__table th,
+.project-modal__table td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.project-modal__table th {
+  width: 38%;
+  max-width: 11rem;
+  font-weight: 600;
+  color: #3d3d3d;
+  background: rgba(240, 235, 228, 0.65);
+  border-right: 1px solid rgba(66, 66, 66, 0.12);
+}
+
+.project-modal__table td {
+  color: var(--text-secondary);
+  background: rgba(255, 253, 248, 0.35);
+}
+
 .project-modal__out-link {
   display: inline-block;
   margin-top: 1.25rem;
