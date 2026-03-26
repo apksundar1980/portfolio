@@ -2,6 +2,7 @@ import './Hero.css'
 import profilePhoto from '../assets/sundar.jpg'
 import { GITHUB_URL, LINKEDIN_URL } from '../constants/social'
 import About from './About'
+import Blog from './Blog'
 import Projects from './Projects'
 import Contact from './Contact'
 
@@ -12,25 +13,6 @@ const NAV_TABS = [
   { id: 'contact', label: 'Contact' },
   { id: 'resume', label: 'Resume' },
 ]
-
-function BlogPanel() {
-  return (
-    <section className="tab-section" aria-labelledby="tab-blog-heading">
-      <h2 id="tab-blog-heading" className="section-title">Blog</h2>
-      <div className="tab-card">
-        <p>Posts on development and design will live here.</p>
-        <a
-          href="https://medium.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tab-inline-link"
-        >
-          Medium →
-        </a>
-      </div>
-    </section>
-  )
-}
 
 function ResumePanel({ onSelectContact }) {
   return (
@@ -68,7 +50,7 @@ export default function Hero({ activeTab, onTabChange }) {
         </nav>
 
         <div
-          className={`hero-body${activeTab === 'home' ? ' hero-body--home' : ' hero-body--tabs'}`}
+          className={`hero-body${activeTab === 'home' ? ' hero-body--home' : ' hero-body--tabs'}${activeTab === 'blog' || activeTab === 'projects' ? ' hero-body--framed-list-tab' : ''}`}
         >
           {activeTab === 'home' && (
             <div className="hero-text">
@@ -132,7 +114,7 @@ export default function Hero({ activeTab, onTabChange }) {
 
           {activeTab === 'projects' && (
             <div
-              className="hero-tab-panel"
+              className="hero-tab-panel hero-tab-panel--projects"
               role="tabpanel"
               id="panel-projects"
               aria-labelledby="tab-projects"
@@ -141,8 +123,13 @@ export default function Hero({ activeTab, onTabChange }) {
             </div>
           )}
           {activeTab === 'blog' && (
-            <div className="hero-tab-panel" role="tabpanel" id="panel-blog" aria-labelledby="tab-blog">
-              <BlogPanel />
+            <div
+              className="hero-tab-panel hero-tab-panel--blog"
+              role="tabpanel"
+              id="panel-blog"
+              aria-labelledby="tab-blog"
+            >
+              <Blog />
             </div>
           )}
           {activeTab === 'about' && (

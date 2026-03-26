@@ -107,7 +107,14 @@
 }
 
 @media (min-width: 901px) {
+  /* Space between tab content and profile; left column grows with viewport. */
+  .hero-split {
+    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+  }
+
   .hero-left {
+    flex: 1 1 0;
+    min-width: 0;
     padding: 1.15rem 2.25rem 0.75rem;
   }
 
@@ -122,6 +129,11 @@
     padding-top: 2.35rem;
     padding-inline: 0.85rem;
   }
+
+  /* Blog & Projects framed lists: extra width for scroll areas without crowding the photo. */
+  .hero-body.hero-body--tabs.hero-body--framed-list-tab {
+    padding-inline: 0.4rem 0.55rem;
+  }
 }
 
 .hero-tab-panel {
@@ -135,6 +147,15 @@
 
 .hero-tab-panel section {
   padding: 0.75rem 0 1.25rem;
+}
+
+/* Blog & Projects: column flex so inner frame can scroll and absorb overflow. */
+.hero-tab-panel--blog,
+.hero-tab-panel--projects {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
 }
 
 @media (min-width: 901px) {
@@ -156,8 +177,12 @@
     gap: 0.4rem;
   }
 
+  /* Narrow fixed-width column for avatar; main column (tabs/blog) takes the rest. */
   .hero-right {
-    padding: 1.15rem 1.5rem 0.5rem;
+    flex: 0 0 auto;
+    width: clamp(188px, 27vw, 300px);
+    max-width: 36%;
+    padding: 1.15rem 1.35rem 0.5rem 1.5rem;
   }
 
   .hero-photo {
