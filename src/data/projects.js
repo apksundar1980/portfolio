@@ -45,6 +45,25 @@ The solution captures and records electronic signatures through the DocuSign pan
 Additionally, integrated Singpass eSign via DocuSign to support secure digital identity verification and legally compliant electronic signatures.`,
   },
   {
+    id: 'singpass-form-mobile-integration',
+    title: 'Singpass API Integration — Online Forms & Mobile',
+    image: new URL('../assets/projects/singpass-integration.png', import.meta.url).href,
+    projectUrl: '#',
+    updatedAt: '2025-01-20T10:00:00',
+    tech: 'Singpass (OpenID Connect), web form prefill, native mobile app handoff',
+    implementation: [
+      { label: 'Integration', value: 'Singpass authentication & verified identity APIs' },
+      { label: 'Web', value: 'Online form webapp with secure callback & session handling' },
+      { label: 'Mobile', value: 'Native / hybrid app flows aligned with Singpass mobile verification' },
+      { label: 'Compliance', value: 'Consent, data minimization, and audit-friendly logging' },
+    ],
+    body: `Built end-to-end integration between Singapore's national digital identity platform (Singpass) and an online form application, so users can authenticate once and proceed with verified, prefilled details where policy allows.
+
+Delivered parallel paths for web and mobile: browser-based flows with robust redirect handling and deep-link or in-app handoff patterns on mobile so the experience stays consistent across channels.
+
+Emphasized secure token handling, clear user consent, and minimal retention of personal data—matching operational expectations for government-identity backed services.`,
+  },
+  {
     id: 'portfolio-site',
     title: 'Portfolio & blog site',
     image: 'https://picsum.photos/seed/project-three/640/360',
