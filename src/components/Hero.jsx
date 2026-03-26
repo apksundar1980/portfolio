@@ -1,5 +1,6 @@
 import './Hero.css'
 import profilePhoto from '../assets/sundar.jpg'
+import { GITHUB_URL, LINKEDIN_URL } from '../constants/social'
 import About from './About'
 import Projects from './Projects'
 import Contact from './Contact'
@@ -83,7 +84,7 @@ export default function Hero({ activeTab, onTabChange }) {
               <div className="hero-social">
                 <a
                   className="hero-social-link"
-                  href="https://github.com/apksundar1980"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -105,7 +106,7 @@ export default function Hero({ activeTab, onTabChange }) {
                 </a>
                 <a
                   className="hero-social-link"
-                  href="https://www.linkedin.com/in/apksundar"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
