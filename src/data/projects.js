@@ -84,13 +84,4 @@ Constructed a robust middleware layer in Laravel to centralize authentication, r
 
 The result improved transaction speed, reliability, and data accuracy while meeting banking-grade security expectations and reducing manual follow-up through stronger automation.`,
   },
-  {
-    id: 'portfolio-site',
-    title: 'Portfolio & blog site',
-    image: 'https://picsum.photos/seed/project-three/640/360',
-    projectUrl: 'https://github.com',
-    updatedAt: '2025-03-20T09:45:00',
-    tech: 'React, Vite, GitHub Pages',
-    body: `This portfolio: tabbed navigation, project and blog listings with in-page frames, and a consistent editorial layout. Built as static assets suitable for GitHub Pages.`,
-  },
 ]
