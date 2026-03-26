@@ -26,13 +26,23 @@ Designed with automated Cron-driven synchronization to continuously fetch and up
 Built with a strong role-based access control architecture, the platform guarantees secure, controlled, and scalable access to sensitive financial information across user roles.`,
   },
   {
-    id: 'ecommerce-platform',
-    title: 'E-commerce platform',
-    image: 'https://picsum.photos/seed/project-two/640/360',
-    projectUrl: 'https://github.com',
+    id: 'docusign-loan-integration',
+    title: 'DocuSign Integration to Loan System',
+    image: new URL('../assets/projects/docusign-integration.png', import.meta.url).href,
+    projectUrl: '#',
     updatedAt: '2024-11-03T11:00:00',
-    tech: 'PHP, WordPress, MySQL',
-    body: `Secure checkout flows, admin tooling for catalog and orders, and integrations with payment providers. Emphasis on reliability during traffic spikes and straightforward operations.`,
+    tech: 'DocuSign eSignature API (open-source SDK), PHP, embedded signing panel, Singpass eSign via DocuSign',
+    implementation: [
+      { label: 'Backend / language', value: 'PHP' },
+      { label: 'Database', value: 'MySQL' },
+      { label: 'Access control', value: 'Role-based access (RBAC)' },
+      { label: 'Front end', value: 'Application UI with embedded DocuSign signing' },
+    ],
+    body: `Developed and implemented a secure DocuSign integration within a loan application system using PHP. Leveraged DocuSign APIs (open-source SDK) to enable embedded signing, allowing borrowers to digitally sign documents directly within the application interface.
+
+The solution captures and records electronic signatures through the DocuSign panel, with all signed documents securely stored and retrieved from DocuSign servers. The system ensures document integrity—once a signature is completed, it cannot be altered. Any modification to the document requires the borrower to re-sign all relevant pages, maintaining compliance and audit standards.
+
+Additionally, integrated Singpass eSign via DocuSign to support secure digital identity verification and legally compliant electronic signatures.`,
   },
   {
     id: 'portfolio-site',

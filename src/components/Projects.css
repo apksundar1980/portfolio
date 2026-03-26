@@ -81,8 +81,8 @@
 }
 
 .project-card__image-wrap {
-  flex: 0 0 min(40%, 200px);
-  width: min(40%, 200px);
+  flex: 0 0 min(42%, 248px);
+  width: min(42%, 248px);
   max-width: 100%;
   min-height: 7.5rem;
   overflow: hidden;
@@ -98,10 +98,12 @@
   }
 }
 
+/* contain: wide logos/banners stay fully readable; cover was cropping “Get back to Xero” etc. */
 .project-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
