@@ -64,6 +64,27 @@ Delivered parallel paths for web and mobile: browser-based flows with robust red
 Emphasized secure token handling, clear user consent, and minimal retention of personal data—matching operational expectations for government-identity backed services.`,
   },
   {
+    id: 'dbs-loan-management-integration',
+    title: 'DBS Bank API Integration with Loan Management System',
+    image: new URL('../assets/projects/dbs-loan-integration.png', import.meta.url).href,
+    projectUrl: '#',
+    updatedAt: '2025-02-10T14:30:00',
+    tech: 'DBS RAPID (real-time banking APIs), Laravel API layer, secure middleware, repayment webhooks / status polling',
+    implementation: [
+      { label: 'Capabilities', value: 'Loan disbursement to borrower accounts; real-time repayment tracking & status retrieval' },
+      { label: 'Backend', value: 'Laravel with dedicated API layer and middleware architecture' },
+      { label: 'Quality & ops', value: 'Strong validation, structured logging, and resilient error handling' },
+      { label: 'Security', value: 'Banking-grade authentication, validated requests, encrypted transport to DBS services' },
+    ],
+    body: `Integrated DBS Bank APIs with a loan management system using a Laravel-based API layer to enable seamless, secure financial operations aligned with real-time banking patterns.
+
+Implemented automated loan disbursement so funds transfer directly to borrower accounts, and built repayment integration to retrieve up-to-date payment statuses for accurate portfolio tracking and reconciliation.
+
+Constructed a robust middleware layer in Laravel to centralize authentication, request validation, and secure communication between the application and DBS banking services.
+
+The result improved transaction speed, reliability, and data accuracy while meeting banking-grade security expectations and reducing manual follow-up through stronger automation.`,
+  },
+  {
     id: 'portfolio-site',
     title: 'Portfolio & blog site',
     image: 'https://picsum.photos/seed/project-three/640/360',
