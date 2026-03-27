@@ -6,18 +6,18 @@ Read this chart **top to bottom**. It is the same path the rest of the article e
 
 ```mermaid
 flowchart TD
-    A[PNG mockup or exported image] --> B{Design file available? e.g. Figma}
-    B -->|Yes| C[Use file for exact colors spacing typography]
-    B -->|PNG only| D[Study image and write a parts list]
-    C --> E[Break the screen into regions and components]
+    A["PNG mockup or exported image"] --> B{"Design file available? e.g. Figma"}
+    B -->|Yes| C["Use file for exact colors, spacing, typography"]
+    B -->|PNG only| D["Study image and write a parts list"]
+    C --> E["Break the screen into regions and components"]
     D --> E
-    E --> F[Implement with Flutter widgets: Scaffold Column Text Button]
-    F --> G[Use PNG or JPG only where it is truly a picture: art photo logo]
-    G --> H[List assets in pubspec.yaml]
-    H --> I[Centralize colors and text styles Theme optional]
-    I --> J[Optional: AI or Figma plugin for draft code then refactor]
-    J --> K[Test on real devices text scale overflow]
-    K --> L[Milestone: maintainable UI that matches the design]
+    E --> F["Implement with Flutter widgets: Scaffold, Column, Text, Button"]
+    F --> G["Use PNG or JPG only for real pictures: art, photo, logo"]
+    G --> H["List assets in pubspec.yaml"]
+    H --> I["Centralize colors and text styles, Theme optional"]
+    I --> J["Optional: AI or Figma plugin for draft code, then refactor"]
+    J --> K["Test on real devices, text scale, overflow"]
+    K --> L["Milestone: maintainable UI that matches the design"]
 ```
 
 If your Markdown viewer does **not** draw Mermaid diagrams (some editors only show the code block), open this file on **GitHub** or use a [Mermaid Live Editor](https://mermaid.live) and paste the diagram.

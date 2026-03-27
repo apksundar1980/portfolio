@@ -39,13 +39,19 @@ function initMermaidLib(m) {
   })
 }
 
+/** Load from CDN so Vite does not bundle Mermaid (avoids Rollup chunks that import the main entry and break render on static hosts). */
+const MERMAID_ESM =
+  'https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.esm.min.mjs'
+
 function loadMermaid() {
   if (!mermaidInitPromise) {
-    mermaidInitPromise = import('mermaid').then((mod) => {
-      const m = mod.default
-      initMermaidLib(m)
-      return m
-    })
+    mermaidInitPromise = import(/* @vite-ignore */ MERMAID_ESM).then(
+      (mod) => {
+        const m = mod.default
+        initMermaidLib(m)
+        return m
+      },
+    )
   }
   return mermaidInitPromise
 }
@@ -79,7 +85,7 @@ function MermaidBlock({ chart }) {
         }
         el.innerHTML = svg
       })
-      .catch(() => {
+      .catch((err) => {
         if (
           cancelled ||
           myGen !== runGenerationRef.current ||
@@ -87,6 +93,7 @@ function MermaidBlock({ chart }) {
         ) {
           return
         }
+        console.error('[Mermaid]', err)
         el.innerHTML =
           '<p class="blog-mermaid__error">Could not render this diagram.</p>'
       })
