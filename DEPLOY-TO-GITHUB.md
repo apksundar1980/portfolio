@@ -31,7 +31,8 @@ cd /var/www/html/sundar.github.io
 npm run build
 bash deploy-manual.sh
 ```
-
+windows 
+& "C:\Program Files\Git\bin\bash.exe" ./deploy-manual.sh
 ### 3. Enable GitHub Pages (if not already)
 
 1. https://github.com/apksundar1980/portfolio/settings/pages

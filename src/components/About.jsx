@@ -5,6 +5,7 @@ export default function About() {
     <section id="about" className="about">
       <h2 className="section-title">About Me</h2>
       <div className="about-card">
+       <div className="about-card-scroll">
         <p>
           I am a Software Professional with over 13 years of experience in the software industry,
           delivering reliable and scalable solutions.
@@ -26,6 +27,7 @@ export default function About() {
           For me, software development is not just a profession — it is a commitment to excellence.
         </p>
         <p>Let&apos;s create solutions that make a difference.</p>
+        </div>
       </div>
     </section>
   )
