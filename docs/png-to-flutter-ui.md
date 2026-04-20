@@ -6,18 +6,18 @@ Read this chart **top to bottom**. It is the same path the rest of the article e
 
 ```mermaid
 flowchart TD
-    A["PNG mockup or exported image"] --> B{"Design file available? e.g. Figma"}
-    B -->|Yes| C["Use file for exact colors, spacing, typography"]
-    B -->|PNG only| D["Study image and write a parts list"]
-    C --> E["Break the screen into regions and components"]
+    A[PNG mockup or exported image] --> B{Design file available? e.g. Figma}
+    B -->|Yes| C[Use file for exact colors spacing typography]
+    B -->|PNG only| D[Study image and write a parts list]
+    C --> E[Break the screen into regions and components]
     D --> E
-    E --> F["Implement with Flutter widgets: Scaffold, Column, Text, Button"]
-    F --> G["Use PNG or JPG only for real pictures: art, photo, logo"]
-    G --> H["List assets in pubspec.yaml"]
-    H --> I["Centralize colors and text styles, Theme optional"]
-    I --> J["Optional: AI or Figma plugin for draft code, then refactor"]
-    J --> K["Test on real devices, text scale, overflow"]
-    K --> L["Milestone: maintainable UI that matches the design"]
+    E --> F[Implement with Flutter widgets: Scaffold Column Text Button]
+    F --> G[Use PNG or JPG only where it is truly a picture: art photo logo]
+    G --> H[List assets in pubspec.yaml]
+    H --> I[Centralize colors and text styles Theme optional]
+    I --> J[Optional: AI or Figma plugin for draft code then refactor]
+    J --> K[Test on real devices text scale overflow]
+    K --> L[Milestone: maintainable UI that matches the design]
 ```
 
 If your Markdown viewer does **not** draw Mermaid diagrams (some editors only show the code block), open this file on **GitHub** or use a [Mermaid Live Editor](https://mermaid.live) and paste the diagram.
@@ -27,110 +27,30 @@ If your Markdown viewer does **not** draw Mermaid diagrams (some editors only sh
 ## Table of contents
 
 1. [Flow at a glance](#flow-at-a-glance)
-2. [AI tools: from PNG to Flutter the easy way (and how long it takes)](#ai-tools-from-png-to-flutter-the-easy-way-and-how-long-it-takes)
-   - [Example AI tool names (IDE, vision chat, design-to-code)](#example-ai-tool-names-ide-vision-chat-design-to-code)
-3. [PNG, Figma export, and Flutter Image (read this first)](#png-figma-export-and-flutter-image-read-this-first)
+2. [PNG, Figma export, and Flutter Image (read this first)](#png-figma-export-and-flutter-image-read-this-first)
    - [What a PNG is (in one minute)](#what-a-png-is-in-one-minute)
    - [What people mean by a Figma image](#what-people-mean-by-a-figma-image)
    - [What Flutter's `Image` widget is](#what-flutters-image-widget-is)
    - [Quick comparison table](#quick-comparison-table)
-   - [PNG or JPEG vs Figma first: which path gives better Flutter output?](#png-or-jpeg-vs-figma-first-which-path-gives-better-flutter-output)
-4. [Overview](#overview)
-5. [Design basics (start here if you are new to design)](#design-basics-start-here-if-you-are-new-to-design)
+3. [Overview](#overview)
+4. [Design basics (start here if you are new to design)](#design-basics-start-here-if-you-are-new-to-design)
    - [What is a mockup?](#what-is-a-mockup)
    - [What is a PNG file?](#what-is-a-png-file)
    - [PNG vs the real design file](#png-vs-the-real-design-file)
    - [A few words designers use (in plain English)](#a-few-words-designers-use-in-plain-english)
-6. [Practical example: from your PNG to Flutter](#practical-example-from-your-png-to-flutter)
+5. [Practical example: from your PNG to Flutter](#practical-example-from-your-png-to-flutter)
    - [Step 1: Turn the picture into a parts list](#step-1-turn-the-picture-into-a-parts-list)
    - [Step 2: Why a full-screen PNG is usually wrong](#step-2-why-a-full-screen-png-is-usually-wrong)
    - [Step 3: Rebuild one screen with widgets](#step-3-rebuild-one-screen-with-widgets)
    - [Step 4: Register image files in pubspec.yaml](#step-4-register-image-files-in-pubspecyaml)
    - [Pattern: row with a thumbnail PNG and text](#pattern-row-with-a-thumbnail-png-and-text)
-7. [What “good output” means in Flutter](#what-good-output-actually-means-in-flutter)
-8. [The reliable baseline: developer workflow](#the-reliable-baseline-developer-workflow-without-over-relying-on-automation)
-9. [Using PNG assets correctly](#using-png-assets-correctly-without-faking-the-whole-ui)
-10. [AI and semi-automated paths](#ai-and-semi-automated-paths-what-helps-today)
-11. [A hybrid strategy](#a-hybrid-strategy-that-often-yields-the-best-results)
-12. [Checklist before you call the screen done](#checklist-before-you-call-the-screen-done)
-13. [Bottom line](#bottom-line)
-
----
-
-## AI tools: from PNG to Flutter the easy way (and how long it takes)
-
-**Can AI turn a PNG into Flutter UI easily?**  
-Yes, compared to starting from a blank file—**if you treat AI as a fast draft tool**, not a finished app. Modern assistants (IDE copilots, chat tools with **image / vision**, and some **screenshot-to-code** products) can look at your mockup and emit a **first-pass** widget tree: `Scaffold`, `Column`, `Text`, `Container`, colors, and rough spacing.
-
-**What becomes easy with AI**
-
-- **Minutes (often ~5–20 minutes)** for a **simple screen**: you get readable Dart you can paste into a project and run, then fix errors.
-- **Describing the screen** in words *while* attaching the PNG often improves the layout (e.g. “use `ListView`, brand green `#2E7D32`, safe area respected”).
-- **Boilerplate**—repetitive `Padding`, `TextStyle`, `BoxDecoration`—is where models save the most typing.
-
-**What still takes time (even with AI)**
-
-AI does not know your app’s **routing, state management, API, or theme** unless you tell it. You still need to:
-
-- Fix **overflow**, **keyboard**, and **different screen sizes**.
-- Replace **magic numbers** with **theme** or constants.
-- Wire **real data**, **navigation**, and **accessibility**.
-
-That work is usually **hours**, not seconds—especially for **production** quality.
-
-**Rough time table (order-of-magnitude, for one developer who already knows Flutter)**
-
-| Goal | With strong AI assist (draft + you refactor) | Mostly manual from PNG |
-|------|---------------------------------------------|-------------------------|
-| **Simple static screen** (few sections, no lists/forms) | **~1–3 hours** to something shippable for an internal demo | **~3–6 hours** |
-| **Typical product screen** (scroll, cards, one form, respects theme) | **~half day to 1 day** | **~1–2 days** |
-| **Polished / responsive / accessible** (multiple breakpoints, large text, edge cases) | **~1–3 days** depending on design complexity | **~2–5 days** |
-
-These ranges **exclude** backend, testing strategy, and app-wide architecture—they assume **UI-only** work.
-
-**Honest takeaway**
-
-- **“AI generated it in two minutes”** usually means **first draft in two minutes**; **merge-ready code** is almost always **longer**.
-- Easiest path: **AI for the skeleton**, **you** for constraints, theme, and device testing—the same **hybrid** idea the rest of this guide expands on.
-
-### Example AI tool names (IDE, vision chat, design-to-code)
-
-Markets change quickly: **check each product’s site** for current **Flutter / Dart** support, pricing, and whether it accepts **image uploads** or works from **Figma** only.
-
-**IDE and inline assistants** (describe layout, paste snippets, sometimes attach an image in the chat panel)
-
-- **GitHub Copilot** (with Copilot Chat where available)
-- **Cursor**
-- **Amazon Q Developer**
-- **JetBrains AI Assistant** (IntelliJ / Android Studio family)
-- **Visual Studio IntelliCode** (completion-focused; pair with a vision chat for PNGs)
-- **Codeium**
-- **Tabnine**
-- **Windsurf** (Codeium)
-
-**Chat apps with vision** (upload your PNG; ask for Flutter / Dart)
-
-- **ChatGPT** (OpenAI)
-- **Claude** (Anthropic)
-- **Google Gemini**
-- **Microsoft Copilot** (consumer / Microsoft 365 where image input exists)
-
-**Design-to-code and handoff** (often stronger when the source is **Figma**, not only a flat PNG)
-
-- **Figma** (Dev Mode, inspect, variables; plus first-party or third-party codegen—verify export quality)
-- **Locofy**
-- **Anima**
-- **TeleportHQ**
-- **Builder.io**
-- **DhiWise** (check current mobile / Flutter coverage)
-
-**Screenshot-to-code style products** (useful for **HTML/CSS/React** prototypes; always ask if they can target **Flutter** or treat output as a **layout reference** only)
-
-- **v0** (Vercel) — web UI focus; rarely Flutter-native
-- **Replit** (agent-style coding from prompts)
-- Various smaller **“screenshot to code”** startups (search the phrase—many are web-first)
-
-For Flutter-specific **Figma → Dart** keywords, search for **Figma to Flutter plugin** or **Flutter code generation from Figma**; names and quality vary by month.
+6. [What “good output” means in Flutter](#what-good-output-actually-means-in-flutter)
+7. [The reliable baseline: developer workflow](#the-reliable-baseline-developer-workflow-without-over-relying-on-automation)
+8. [Using PNG assets correctly](#using-png-assets-correctly-without-faking-the-whole-ui)
+9. [AI and semi-automated paths](#ai-and-semi-automated-paths-what-helps-today)
+10. [A hybrid strategy](#a-hybrid-strategy-that-often-yields-the-best-results)
+11. [Checklist before you call the screen done](#checklist-before-you-call-the-screen-done)
+12. [Bottom line](#bottom-line)
 
 ---
 
@@ -192,31 +112,6 @@ Image.asset(
 | **Contains editable text as text?** | No (text is painted pixels). | Yes in the **document**; **no** in a PNG export. | N/A (widget); you use separate **`Text`** widgets for real text. |
 | **Use in Flutter** | Reference path via `Image.asset`, or open outside Flutter. | Use **document** for specs; use **exported** PNG like any other asset. | Use to **display** the bitmap (or use other widgets for UI chrome). |
 
-### PNG or JPEG vs Figma first: which path gives better Flutter output?
-
-You are choosing between two high-level workflows (with or without AI):
-
-1. **Raster image (PNG / JPEG) → AI → Flutter** (vision model or screenshot-style tool writes Dart from pixels).
-2. **Raster image → (optional) recreate or import into a Figma file → AI / plugins → Flutter** (structured frames, text layers, spacing).
-
-**Short answer:** For **best output**—meaning **correct spacing and type**, **real text**, **reusable components**, and **easier refactors**—**a proper Figma document in the middle usually beats going straight from a flat image to Flutter**, especially for anything beyond a trivial screen. The cost is **extra time** rebuilding or cleaning the design in Figma (fully automatic “JPEG → perfect Figma” is rare).
-
-| | **PNG / JPEG → Flutter (AI on the image)** | **Image → Figma design → Flutter (AI on structure)** |
-|---|-------------------------------------------|------------------------------------------------------|
-| **Typical strength** | Fast **first draft**; no design-tool setup. | **Inspectable** sizes, colors, typography; text stays **text** in design; better handoff to codegen or AI. |
-| **Typical weakness** | Model **guesses** layout; hard to match **exact** dp/spacing; long labels and edge cases break more often. | Upfront **effort** to build or fix Figma; “auto image to Figma” tools often need **manual tidy-up**. |
-| **Best when** | One-off screen, prototype, or you will **throw away** the first draft. | Ongoing product, **multiple screens**, or you care about **design–dev consistency**. |
-
-**Using AI in each path**
-
-- **Image → Flutter:** Best use of AI is **chunked prompts** + copy-pasted **theme values** (hex, font names) you read from the image; expect **refactor** time.
-- **Image → Figma → Flutter:** AI can help **name layers**, suggest **auto layout**, or **draft** frames, but the win is that **you** (or plugins) work from **vectors and text nodes** afterward—codegen and prompts become **more accurate** than from a JPEG alone.
-
-**Practical recommendation**
-
-- Need something **quick and rough**? **PNG/JPEG + vision AI → Flutter** is fine—plan time to **fix** overflow and theme.
-- Need **production-grade** UI that tracks a design system? **Invest in Figma** (even if the first step is **tracing** the mockup), then **Flutter + AI** on top of that structure usually produces the **better final result**.
-
 ---
 
 ## Overview
@@ -226,9 +121,7 @@ This guide is for **Flutter developers**—including people who are **new to des
 **What you will learn:**
 
 - A **flowchart** at the top of this page that shows the whole PNG → Flutter path in one view.
-- **Up front:** how **AI tools** can speed up PNG → Flutter drafts and **rough time ranges** (minutes vs hours) before you dive deeper.
 - **PNG vs Figma vs Flutter `Image`**: what each term actually means and how they differ (placed **early** so you can read it first).
-- **Raster image straight to Flutter vs Figma-first**—which path tends to give **better** results when using AI.
 - In simple terms: what a **mockup** and a **PNG** are, and why they are not enough by themselves to “auto-build” an app.
 - What **good Flutter UI** looks like from an engineering perspective (not only “looks like the picture on my laptop”).
 - A **step-by-step workflow** that professional teams use when implementing designs.
